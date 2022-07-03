@@ -68,11 +68,11 @@ export PATH=$PATH:$PETSC_DIR/$PETSC_ARCH/bin
 18. Install `spatialindex`:
 ```
 tar zxvf spatialindex-src-1.9.2.tar.gz
-mv spatialindex spatialindex-src
+mv spatialindex-src-1.9.2 spatialindex-src
 cd spatialindex-src
-cmake -DCMAKE_INSTALL_PREFIX=/home/username/spatialindex
+cmake . # (do not forget the .)
 make
-make install
+sudo make install
 ```
 
 19. Install `rtree` by `python -m pip install rtree`.
