@@ -1,0 +1,17 @@
+test/.cache
+test/.conda
+test/.config
+test/.local
+test/.minconda3
+test/SU2
+test/su2code
+test/su2code-TestCases
+test/su2code-Tutorials
+test/.bash_history
+test/.bashrc
+test/.condarc
+test/.gitconfig
+test/.python_history
+test/.sudo_as_admin_successful
+test/su2code-TestCases-v7.3.1-0-gdfa25d6.tar.gz
+test/su2code-Tutorials-v7.3.0-0-g5c63f8d.tar.gz
