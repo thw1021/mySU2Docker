@@ -4,7 +4,8 @@ test/.config
 test/.local
 test/miniconda3
 test/petsc
-test/spatia*
+test/spatialindex
+test/spatialindex-src
 test/SU2
 test/su2code
 test/su2code-TestCases
