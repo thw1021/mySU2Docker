@@ -2,7 +2,7 @@ test/.cache
 test/.conda
 test/.config
 test/.local
-test/.minconda3
+test/miniconda3
 test/SU2
 test/su2code
 test/su2code-TestCases
