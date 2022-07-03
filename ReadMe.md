@@ -1,3 +1,6 @@
+## Install SU2 with docker
+
+
 1. `cd` into the folder where `Dockerfile` is.
 
 2. Create a docker ubuntu system image for installing SU2: `docker build -t su2 .` (`-t` to specify image name as `su2`, and `.` means using the `Dockerfile` in this folder)
@@ -41,3 +44,40 @@ Consider using Tsinghua mirrors for anaconda and pip if you are in China.
 For anaconda, see https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/
 
 For pip, see https://mirrors.tuna.tsinghua.edu.cn/help/pypi/
+
+
+For the FSI tutorial, do some extra steps (make sure you are now in the created `su2` python virtual environment)
+
+13. Install `blas` and `lapack` libraries by `sudo apt-get install -y libblas-dev liblapack-dev`
+
+14. Install `Cython` and `scipy` by `python -m pip install Cython scipy`
+
+15. Uncompress `petsc-with-docs-3.16.1.tar.gz`, and rename it to `petsc`, then `cd petsc`
+
+16. Config petsc by `./configure -with-petsc4py=1`, then following the terminal outputs to install PETSc (`make PETSC_DIR=/home/tang/petsc PETSC_ARCH=arch-linux-c-debug all` and then `make PETSC_DIR=/home/tang/petsc PETSC_ARCH=arch-linux-c-debug check`)
+
+17. Put the following settings into `.bashrc` (again, change `username` according to your own host system)
+
+```
+export PYTHONPATH=$PYTHONPATH:/home/tang/petsc/arch-linux-c-debug/lib
+export PETSC_DIR=/home/username/petsc
+export PETSC_ARCH=arch-linux-c-debug
+export PATH=$PATH:$PETSC_DIR/$PETSC_ARCH/bin
+export PATH=$PATH:/home/tang/bin
+```
+
+18. Install `spatialindex`:
+```
+tar zxvf spatialindex-src-1.9.2.tar.gz
+mv spatialindex spatialindex-src
+cd spatialindex-src
+cmake -DCMAKE_INSTALL_PREFIX=/home/tang/spatialindex
+make
+make install
+```
+
+19. Install `rtree` by `python -m pip install rtree`.
+
+Things should work now.
+
+Test the [dynamic FSI python](https://su2code.github.io/tutorials/Dynamic_FSI_Python/) tutorial by `mpirun -n 2 python -m mpi4py $SU2_RUN/fsi_computation.py --parallel -f fsi.cfg > log 2>&1` (remember put mesh into subfolder)
