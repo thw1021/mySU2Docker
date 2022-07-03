@@ -22,9 +22,9 @@
 
 12. Install `SU2` following the [guidance](https://su2code.github.io/docs_v7/Build-SU2-Linux-MacOS/):
 
-    Firstly, executing
+    Firstly, executing (remember change `username` to your own system)
     ```
-    ./meson.py build -Denable-autodiff=true -Denable-directdiff=true -Denable-pywrapper=true -Dwith-mpi=enabled --prefix=/home/tang/SU2
+    ./meson.py build -Denable-autodiff=true -Denable-directdiff=true -Denable-pywrapper=true -Dwith-mpi=enabled --prefix=/home/username/SU2
     ```
     Then put the suggested path (see the terminal outputs) into your `.bashrc`.
 
