@@ -34,3 +34,8 @@
     ```
 
 `SU2` should be installed successfully now.
+
+**Note**: Consider using Tsinghua mirrors for anaconda and pip if you are in China.
+
+          For anaconda, see https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/
+          For pip, see https://mirrors.tuna.tsinghua.edu.cn/help/pypi/
