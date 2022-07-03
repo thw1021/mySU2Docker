@@ -54,16 +54,16 @@ For the FSI tutorial, do some extra steps (make sure you are now in the created 
 
 15. Uncompress `petsc-with-docs-3.16.1.tar.gz`, and rename it to `petsc`, then `cd petsc`
 
-16. Config petsc by `./configure -with-petsc4py=1`, then following the terminal outputs to install PETSc (`make PETSC_DIR=/home/tang/petsc PETSC_ARCH=arch-linux-c-debug all` and then `make PETSC_DIR=/home/tang/petsc PETSC_ARCH=arch-linux-c-debug check`)
+16. Config petsc by `./configure -with-petsc4py=1`, then following the terminal outputs to install PETSc (`make PETSC_DIR=/home/username/petsc PETSC_ARCH=arch-linux-c-debug all` and then `make PETSC_DIR=/home/username/petsc PETSC_ARCH=arch-linux-c-debug check`)
 
 17. Put the following settings into `.bashrc` (again, change `username` according to your own host system)
 
 ```
-export PYTHONPATH=$PYTHONPATH:/home/tang/petsc/arch-linux-c-debug/lib
+export PYTHONPATH=$PYTHONPATH:/home/username/petsc/arch-linux-c-debug/lib
 export PETSC_DIR=/home/username/petsc
 export PETSC_ARCH=arch-linux-c-debug
 export PATH=$PATH:$PETSC_DIR/$PETSC_ARCH/bin
-export PATH=$PATH:/home/tang/bin
+export PATH=$PATH:/home/username/bin
 ```
 
 18. Install `spatialindex`:
@@ -71,7 +71,7 @@ export PATH=$PATH:/home/tang/bin
 tar zxvf spatialindex-src-1.9.2.tar.gz
 mv spatialindex spatialindex-src
 cd spatialindex-src
-cmake -DCMAKE_INSTALL_PREFIX=/home/tang/spatialindex
+cmake -DCMAKE_INSTALL_PREFIX=/home/username/spatialindex
 make
 make install
 ```
