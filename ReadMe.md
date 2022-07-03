@@ -63,7 +63,6 @@ export PYTHONPATH=$PYTHONPATH:/home/username/petsc/arch-linux-c-debug/lib
 export PETSC_DIR=/home/username/petsc
 export PETSC_ARCH=arch-linux-c-debug
 export PATH=$PATH:$PETSC_DIR/$PETSC_ARCH/bin
-export PATH=$PATH:/home/username/bin
 ```
 
 18. Install `spatialindex`:
